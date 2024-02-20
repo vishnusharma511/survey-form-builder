@@ -29,6 +29,7 @@ class SurveyInputController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('survey_id', __('Survey id'));
+        $grid->column('name', __('Name'));
         $grid->column('key', __('Key'));
         $grid->column('type', __('Type'));
         $grid->column('is_required', __('Is required'));
@@ -36,7 +37,6 @@ class SurveyInputController extends AdminController
         $grid->column('status', __('Status'));
         $grid->column('sort', __('Sort'));
         $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
 
         return $grid;
     }
@@ -53,6 +53,7 @@ class SurveyInputController extends AdminController
 
         $show->field('id', __('Id'));
         $show->field('survey_id', __('Survey id'));
+        $show->field('name', __('Name'));
         $show->field('key', __('Key'));
         $show->field('type', __('Type'));
         $show->field('is_required', __('Is required'));
@@ -78,8 +79,12 @@ class SurveyInputController extends AdminController
 
         $form->select('survey_id', __('Survey'))->options($surveys);
 
-        $form->text('key', __('Key'));
-        $form->text('type', __('Type'));
+        $form->text('name', __('Name'));
+        
+        $form->select('key', __('Key'))->options(array_combine(constant('App\Models\SurveyInputs::formInputTags'), constant('App\Models\SurveyInputs::formInputTags')));
+
+        $form->select('type', __('Type'))->options(array_combine(constant('App\Models\SurveyInputs::inputTypes'), constant('App\Models\SurveyInputs::inputTypes')));
+
         $form->switch('is_required', __('Is required'));
         $form->text('pattern', __('Pattern'));
         $form->switch('status', __('Status'))->default(1);

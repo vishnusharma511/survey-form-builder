@@ -3,6 +3,7 @@
 use Illuminate\Routing\Router;
 use App\Admin\Controllers\SurveyController;
 use App\Admin\Controllers\SurveyInputController;
+use App\Admin\Controllers\SurveyInputSelectController;
 
 Admin::routes();
 
@@ -16,7 +17,7 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('home');
 
     $router->resource('surveys', SurveyController::class);
-
     $router->resource('survey-inputs', SurveyInputController::class);
+    $router->resource('survey-input-selects', SurveyInputSelectController::class);
 
 });

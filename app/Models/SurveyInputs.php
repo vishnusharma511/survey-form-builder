@@ -21,4 +21,33 @@ class SurveyInputs extends Model
         'status',
         'sort',
     ];
+
+    const formInputTags = [
+        "input",
+        "select",
+        "textarea",
+    ];
+
+    const inputTypes = [
+        "text",
+        "password",
+        "checkbox",
+        "radio",
+        "number",
+        "date",
+        "time",
+        "color",
+        "email",
+        "file",
+        "image",
+        "month",
+        "range",
+        "search",
+        "tel",
+        "url",
+        "datetime",
+        "datetime-local",
+        "week"
+    ];
+
 }
