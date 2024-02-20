@@ -15,7 +15,7 @@ use App\Http\Controllers\SurveyController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('/survey/{url}', [SurveyController::class, 'show']);

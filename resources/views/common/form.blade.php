@@ -1,4 +1,5 @@
-<form action="form_handler.php" method="post">
+<form action="#" method="post">
+    <input value="{{ $survey->id }}" type="hidden"/>
     <div class="col">
         <input type="text" name="name" placeholder="Name" pattern="[a-zA-Z\s]+" title="Name" required />
     </div>
