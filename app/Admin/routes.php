@@ -19,5 +19,5 @@ Route::group([
     $router->resource('surveys', SurveyController::class);
     $router->resource('survey-inputs', SurveyInputController::class);
     $router->resource('survey-input-selects', SurveyInputSelectController::class);
-
+    $router->resource('form-datas', FormDataController::class);
 });

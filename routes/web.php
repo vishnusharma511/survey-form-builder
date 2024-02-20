@@ -19,3 +19,11 @@ Route::get('/', function () {
 });
 
 Route::get('/survey/{url}', [SurveyController::class, 'show']);
+
+
+Route::post('/survey', [SurveyController::class,'store'])->name('survey.store');
+
+
+Route::get('/thankyou', function () {
+    return view('thankyou');
+})->name('thankyou');
